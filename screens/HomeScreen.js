@@ -39,7 +39,7 @@ export default function HomeScreen() {
     })
   }
 
-  console.log(weather?.forecast?.forecastday, "---");
+ 
 
   useEffect(() => {
     fetchMyWeatherData();
@@ -47,7 +47,7 @@ export default function HomeScreen() {
 
   const fetchMyWeatherData = async () => {
     let myCity = await getData('city');
-    let cityName = 'Islamabad';
+    let cityName = 'Istanbul';
     if (myCity) {
       cityName = myCity;
     }
@@ -55,7 +55,6 @@ export default function HomeScreen() {
       cityName,
       days: '10'
     }).then(data => {
-      // console.log('got data: ',data.forecast.forecastday);
       setWeather(data);
       setLoading(false);
     })
